@@ -1,0 +1,27 @@
+<template>
+    <div
+        class="bg-black text-zinc-200 w-full flex flex-col md:flex-row md:items-end justify-between p-4 md:p-10 gap-4"
+    >
+        <div class="flex flex-col gap-6">
+            <p>Skaara living AS</p>
+            <p>post@skaaraliving.com</p>
+            <p>+47 951 91 784</p>
+            <p>Copyright © 2023</p>
+        </div>
+
+        <a
+            href="https://shop.skaaraliving.com/"
+            rel="noopener noreferrer"
+            target="_blank"
+            class="text-primary border-primary border-2 hover:bg-primary/20 font-medium p-4 px-8 text-center rounded-full md:text-xl h-min transition-all"
+        >
+            Buy a gift card
+        </a>
+    </div>
+</template>
+
+<script lang="ts">
+export default {
+    name: "AppFooter",
+};
+</script>
