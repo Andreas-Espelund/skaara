@@ -1,7 +1,7 @@
 <template>
     <div
         v-if="images.length > 0"
-        class="relative flex items-center justify-center h-screen w-full overflow-hidden bg-zinc-900"
+        class="relative flex items-center justify-center h-screen w-full overflow-hidden"
     >
         <button
             @click="prevSlide"

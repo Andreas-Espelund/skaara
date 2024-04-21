@@ -4,7 +4,7 @@ import AppFooter from "@/components/AppFooter.vue";
 </script>
 
 <template>
-    <main class="flex flex-col min-h-screen justify-between bg-zinc-900">
+    <main class="flex flex-col min-h-screen justify-between">
         <RouterView />
         <AppFooter />
     </main>
