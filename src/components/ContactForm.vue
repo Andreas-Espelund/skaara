@@ -82,6 +82,7 @@ import emailjs from "@emailjs/browser";
 
 export default {
     name: "Contact",
+
     data() {
         return {
             form: {

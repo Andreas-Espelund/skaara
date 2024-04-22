@@ -1,6 +1,6 @@
 <template>
     <div
-        class="bg-black text-zinc-200 w-full flex flex-col md:flex-row md:items-end justify-between p-4 md:p-10 py-10 gap-10"
+        class="bg-black text-zinc-200 w-full flex flex-col-reverse md:flex-row md:items-start justify-between p-4 md:p-10 py-10 gap-10"
     >
         <div class="flex flex-col gap-6">
             <p>Skaara living AS</p>
