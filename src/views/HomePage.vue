@@ -4,7 +4,7 @@
             <AppHeader />
         </div>
 
-        <Gallery :images="images" />
+        <Gallery />
 
         <section id="contact" class="sectionWrapper">
             <h1 class="stickyHeader">Contact</h1>
@@ -24,20 +24,7 @@
                 'opacity-0': !buttonVisible,
             }"
         >
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-6 h-6"
-            >
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m4.5 15.75 7.5-7.5 7.5 7.5"
-                />
-            </svg>
+            <ChevronUpIcon class="w-6 h-6" />
         </button>
     </div>
 </template>
@@ -48,19 +35,13 @@ import AppHeader from "@/components/AppHeader.vue";
 import Gallery from "@/components/Gallery.vue";
 import ContactForm from "@/components/ContactForm.vue";
 import Map from "@/components/Map.vue";
+import { ChevronUpIcon } from "@heroicons/vue/24/outline";
 export default {
-    components: { Card, AppHeader, Gallery, ContactForm, Map },
+    components: { Card, AppHeader, Gallery, ContactForm, Map, ChevronUpIcon },
     name: "HomePage",
     data() {
         return {
             buttonVisible: false,
-            images: [
-                "/images/dag/DSC08803.jpg",
-                "/images/dag/DSC08778.jpg",
-                "/images/kveld/DSC08663-3.jpg",
-                "/images/kveld/DSC08623-2.jpg",
-                "/images/kveld/DSC08704-3.jpg",
-            ] as string[],
         };
     },
     methods: {

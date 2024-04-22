@@ -7,56 +7,61 @@
             @click="prevSlide"
             class="absolute left-0 text-white/40 text-6xl m-6 z-10 cursor-pointer"
         >
-            <span>&#10094;</span>
-            <!-- Chevron left -->
+            <ChevronLeftIcon class="w-16 h-16 stroke-5" />
         </button>
+
+        <!-- Render all images and control visibility through class bindings -->
         <div
             v-for="(image, index) in images"
             :key="index"
-            :class="
-                index === current
-                    ? 'opacity-1 duration-1000 transition-opacity w-full h-full'
-                    : 'opacity-0 duration-1000 transition-opacity'
-            "
+            class="absolute w-full h-full transition-opacity duration-1000"
+            :class="{
+                'opacity-0': index !== current && index !== nextIndex,
+                'opacity-100': index === current || index === nextIndex,
+            }"
         >
             <img
-                v-if="index === current"
                 :src="image"
-                alt="cabin view"
+                alt="Image view"
                 class="object-cover w-full h-full"
             />
         </div>
+
         <button
             @click="nextSlide"
             class="absolute right-0 text-white/40 text-6xl m-6 z-10 cursor-pointer"
         >
-            <span>&#10095;</span>
-            <!-- Chevron right -->
+            <ChevronRightIcon class="w-16 h-16 stroke-5" />
         </button>
     </div>
 </template>
 
 <script lang="ts">
+import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/vue/24/outline";
+import images from "@/data/imagePaths.json";
+
 export default {
     name: "Gallery",
-    props: {
-        images: {
-            type: Array<string>,
-            default: () => [],
-        },
+    components: {
+        ChevronLeftIcon,
+        ChevronRightIcon,
     },
     data() {
         return {
             current: 0,
+            nextIndex: 1, // Track the next image index for transitions
             timer: undefined as number | undefined,
+            images: images as String[],
         };
     },
     methods: {
         nextSlide() {
-            this.current =
+            this.current = this.nextIndex;
+            this.nextIndex =
                 this.current === this.images.length - 1 ? 0 : this.current + 1;
         },
         prevSlide() {
+            this.nextIndex = this.current;
             this.current =
                 this.current === 0 ? this.images.length - 1 : this.current - 1;
         },
@@ -86,3 +91,5 @@ export default {
     },
 };
 </script>
+
+<style scoped></style>
