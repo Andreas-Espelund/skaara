@@ -51,7 +51,7 @@ export default {
             current: 0,
             nextIndex: 1, // Track the next image index for transitions
             timer: undefined as number | undefined,
-            images: images as String[],
+            images: images as string[],
         };
     },
     methods: {
