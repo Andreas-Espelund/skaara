@@ -36,8 +36,9 @@ import Gallery from "@/components/Gallery.vue";
 import ContactForm from "@/components/ContactForm.vue";
 import Map from "@/components/Map.vue";
 import { ChevronUpIcon } from "@heroicons/vue/24/outline";
+import Socials from "@/components/Socials.vue";
 export default {
-    components: { Card, AppHeader, Gallery, ContactForm, Map, ChevronUpIcon },
+    components: { Card, AppHeader, Gallery, ContactForm, Map, ChevronUpIcon, Socials },
     name: "HomePage",
     data() {
         return {

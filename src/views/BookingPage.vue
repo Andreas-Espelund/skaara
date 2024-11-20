@@ -17,8 +17,7 @@
 
 <script lang="ts">
 import Card from "@/components/Card.vue";
-import type { Cabin } from "../types";
-import { RouterLink } from "vue-router";
+import type { Cabin } from "@/types";
 import { ChevronLeftIcon } from "@heroicons/vue/24/outline";
 import cabins from "@/data/cabins.json";
 

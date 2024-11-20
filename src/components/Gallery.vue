@@ -33,18 +33,22 @@
         >
             <ChevronRightIcon class="w-16 h-16 stroke-5" />
         </button>
+
+        <Socials/>
     </div>
 </template>
 
 <script lang="ts">
 import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/vue/24/outline";
 import images from "@/data/imagePaths.json";
+import Socials from "@/components/Socials.vue";
 
 export default {
     name: "Gallery",
     components: {
         ChevronLeftIcon,
         ChevronRightIcon,
+        Socials
     },
     data() {
         return {
