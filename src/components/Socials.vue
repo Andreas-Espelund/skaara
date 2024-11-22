@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a v-for="so in socials" :href="so.url" target="_blank" v-bind:key>
+    <a v-for="so in socials" :href="so.url" target="_blank" :key="so.alt">
       <img :src="so.icon" :alt="so.alt">
     </a>
   </div>
