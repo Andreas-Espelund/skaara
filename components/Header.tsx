@@ -21,7 +21,6 @@ const Header: React.FC = () => {
                     Book now
                 </Link>
             </div>
-
             <Link href="/booking" className="md:hidden bg-primary text-black py-2 px-6 rounded-full font-medium font-sans">
                 Book now
             </Link>
