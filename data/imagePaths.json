@@ -1,0 +1,18 @@
+[
+  {
+    "src": "/images/carousel/drone.jpeg",
+    "alt": "Exterior of the cabin in the sun"
+  },
+  {
+    "src": "/images/carousel/interior_model.jpg",
+    "alt": "Cabin interior at dusk"
+  },
+  {
+    "src": "/images/carousel/terrace.jpg",
+    "alt": "Exterior view from the terrace"
+  },
+  {
+    "src": "/images/carousel/service.jpg",
+    "alt": "Service available, beverages that can be ordered"
+  }
+]

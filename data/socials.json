@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://www.instagram.com/skaaraliving/",
+    "icon": "/icons/instagram-logo-white.png",
+    "alt": "Instagram"
+  },
+  {
+    "url": "https://www.facebook.com/p/Skaara-Living-61550763813111/",
+    "icon": "/icons/facebook-logo-white.png",
+    "alt": "Facebook"
+  },
+  {
+    "url": "https://www.tiktok.com/@skaaraliving",
+    "icon": "/icons/tiktok-logo-white.png",
+    "alt": "TikTok"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "id": 0,
+    "href": "https://www.airbnb.no/rooms/918645205013496461",
+    "img": "images/cabins/lotsberg.webp",
+    "name": "Lotsbergskaara"
+  },
+  {
+    "id": 1,
+    "href": "https://www.airbnb.no/rooms/934184710629468152",
+    "img": "/images/cabins/hjelle.jpg",
+    "name": "Hjellaakeren"
+  }
+]

@@ -1,21 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.playfair {
+  font-family: "Playfair Display";
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  scroll-behavior: smooth;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+html {
+  background-color: rgb(24 24 27);
+}
+
+
+.input {
+  @apply p-4 bg-zinc-800 rounded-lg text-white outline-none focus:outline-primary;
+}
+
+.label {
+  @apply grid gap-2 col-span-2 md:col-span-1;
+}
+
+.icon-wrapper {
+  @apply w-12 h-12 p-2;
+}
+
+.stickyHeader {
+  @apply text-3xl text-white z-40 lg:text-4xl py-2 lg:py-10  sticky top-0 bg-gradient-to-b from-zinc-900 to-transparent;
+  font-family: "Playfair Display", serif;
+}
+
+.sectionWrapper {
+  @apply flex flex-col p-4 md:p-20 max-w-screen-2xl mx-auto;
 }
