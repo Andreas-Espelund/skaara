@@ -3,12 +3,29 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { sendEmail } from '@/lib/emailService';
+import Notice from "@/components/Notice";
 
 const Contact: React.FC = () => {
     const { register, handleSubmit, formState: { isSubmitting } } = useForm();
+    const [error, setError] = React.useState(false);
+    const [success, setSuccess] = React.useState(false);
+    const [loading, setLoading] = React.useState(false);
+
+
+    const clearStates = () => {
+        setError(false);
+        setLoading(false);
+        setSuccess(false);
+    }
 
     const onSubmit = async (data: any) => {
-        await sendEmail(data);
+        clearStates();
+        setLoading(true)
+
+        sendEmail(data)
+            .then(() => setSuccess(true))
+            .catch(() => setError(true))
+            .finally(() => setLoading(false))
     };
 
     return (
@@ -22,7 +39,7 @@ const Contact: React.FC = () => {
                     className="input"
                     type="text"
                     id="firstname"
-                    {...register('firstname', { required: true })}
+                    {...register('firstname', {required: true})}
                 />
             </label>
 
@@ -32,7 +49,7 @@ const Contact: React.FC = () => {
                     className="input"
                     type="text"
                     id="lastname"
-                    {...register('lastname', { required: true })}
+                    {...register('lastname', {required: true})}
                 />
             </label>
 
@@ -42,7 +59,7 @@ const Contact: React.FC = () => {
                     className="input"
                     type="email"
                     id="email"
-                    {...register('email', { required: true })}
+                    {...register('email', {required: true})}
                 />
             </label>
 
@@ -52,7 +69,7 @@ const Contact: React.FC = () => {
                     className="input"
                     type="text"
                     id="phone"
-                    {...register('phone', { required: true })}
+                    {...register('phone', {required: true})}
                 />
             </label>
 
@@ -62,7 +79,7 @@ const Contact: React.FC = () => {
                     className="input resize-none p-4 outline-none"
                     rows={5}
                     id="message"
-                    {...register('message', { required: true })}
+                    {...register('message', {required: true})}
                 />
             </label>
             <button
@@ -70,9 +87,16 @@ const Contact: React.FC = () => {
                 type="submit"
                 disabled={isSubmitting}
             >
-                Send
+                {loading ? 'please wait...' : 'Send'}
             </button>
-            <p className={isSubmitting ? '' : 'hidden'}>Please wait ...</p>
+            {success &&
+                <Notice title={"Sent!"} message={"We will get back to you shortly"} variant={"success"}
+                        onClose={clearStates}/>
+            }
+            {error &&
+                <Notice title={"Error!"} message={"Unable to send message, send us an email or try again later"}
+                        variant={"danger"} onClose={clearStates}/>
+            }
 
             <div className="col-span-2 text-center text-sm">
                 <p>Or contact directly at:</p>
