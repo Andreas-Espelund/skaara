@@ -28,7 +28,7 @@ export function ImageCarousel({ images }: FullscreenImageCarouselProps) {
     return (
         <Carousel
             setApi={setApi}
-            className="w-full h-screen relative"
+            className="w-full h-dynamic-screen relative"
             plugins={[
                 Autoplay({delay: 5000,}),
                 Fade({active:true})
@@ -37,7 +37,7 @@ export function ImageCarousel({ images }: FullscreenImageCarouselProps) {
             <CarouselContent>
                 {images.map((image, index) => (
                     <CarouselItem key={index}>
-                        <div className={"h-screen"}>
+                        <div className={"h-dynamic-screen"}>
                             <img src={image.src} alt={image.alt} className={"w-full h-full object-cover object-right-top md:object-center"}/>
                         </div>
 

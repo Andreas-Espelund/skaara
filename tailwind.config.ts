@@ -10,7 +10,10 @@ export default {
   	extend: {
   		colors: {
             primary: "#facc15",
-        }
+        },
+        height: {
+              'dynamic-screen': '100dvh'
+        },
   	}
   },
   plugins: [require("tailwindcss-animate")],
