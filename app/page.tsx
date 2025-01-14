@@ -47,7 +47,7 @@ const HomePage: React.FC = () => {
 
         <button
             onClick={scrollToTop}
-            className={`fixed bottom-0 right-0 z-50 m-4 bg-primary transition-all duration-300 ease-in-out rounded-full shadow-xl ${
+            className={`fixed bottom-0 p-2 right-0 z-50 m-4 bg-primary transition-all duration-300 ease-in-out rounded-full shadow-xl ${
                 buttonVisible ? 'opacity-100' : 'opacity-0'
             }`}
         >

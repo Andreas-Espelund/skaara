@@ -8,7 +8,7 @@ import cabins from '@/data/cabins.json';
 const BookingPage: React.FC = () => {
     return (
         <div className="p-4 md:p-10 flex flex-col gap-10 max-w-screen-2xl mx-auto">
-            <Link href="/" className="bg-primary rounded-full w-fit">
+            <Link href="/" className="bg-primary rounded-full w-fit p-2">
                 <ChevronLeft/>
             </Link>
 

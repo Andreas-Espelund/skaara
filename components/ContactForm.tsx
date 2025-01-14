@@ -5,8 +5,16 @@ import { useForm } from 'react-hook-form';
 import { sendEmail } from '@/lib/emailService';
 import Notice from "@/components/Notice";
 
+
+export interface ContactFormData {
+    firstname: string;
+    lastname: string;
+    email: string;
+    phone: string;
+    message: string;
+}
 const Contact: React.FC = () => {
-    const { register, handleSubmit, formState: { isSubmitting } } = useForm();
+    const { register, handleSubmit, formState: { isSubmitting } } = useForm<ContactFormData>();
     const [error, setError] = React.useState(false);
     const [success, setSuccess] = React.useState(false);
     const [loading, setLoading] = React.useState(false);
@@ -18,13 +26,17 @@ const Contact: React.FC = () => {
         setSuccess(false);
     }
 
-    const onSubmit = async (data: any) => {
+    const onSubmit = async (data: ContactFormData) => {
         clearStates();
         setLoading(true)
 
         sendEmail(data)
             .then(() => setSuccess(true))
-            .catch(() => setError(true))
+            .catch((error) => {
+                console.log('error', error);
+                setError(true)
+
+            })
             .finally(() => setLoading(false))
     };
 
